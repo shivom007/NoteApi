@@ -82,11 +82,11 @@ const deleteNote = async (req, res) => {
 
 const shareNote = async (req, res) => {
   const { id } = req.params;
-  const { targetUserId } = req.body;
+  const { SharingUserId } = req.body;
   const userId = req.user._id;
-
+  
   try {
-    const result = await noteService.shareNote(id, targetUserId, userId);
+    const result = await noteService.shareNote(id, SharingUserId, userId);
     if (result.success) {
       res.status(200).json({ success: true, message: result.message });
     } else {

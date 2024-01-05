@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 const getAllNotes = async (userId) => {
   try {
-    const notes = await Note.find({ user: userId }).populate('sharedWith', 'username');
+    const notes = await Note.find({ user: userId })
     return { success: true, notes };
   } catch (error) {
     return { success: false, message: error.message };
@@ -12,7 +12,7 @@ const getAllNotes = async (userId) => {
 
 const getNoteById = async (noteId, userId) => {
   try {
-    const note = await Note.findOne({ _id: noteId, user: userId }).populate('sharedWith', 'username');
+    const note = await Note.findOne({ _id: noteId, user: userId })
     if (!note) {
       return { success: false, message: 'Note not found.' };
     }
@@ -67,7 +67,7 @@ const deleteNote = async (noteId, userId) => {
   }
 };
 
-const shareNote = async (noteId, targetUserId, userId) => {
+const shareNote = async (noteId, SharingUserId, userId) => {
   try {
     const note = await Note.findOne({ _id: noteId, user: userId });
 
@@ -75,17 +75,17 @@ const shareNote = async (noteId, targetUserId, userId) => {
       return { success: false, message: 'Note not found.' };
     }
 
-    const targetUser = await User.findById(targetUserId);
-
-    if (!targetUser) {
+    const sharingUser = await User.findOne({_id: SharingUserId});
+    
+    if (!sharingUser) {
       return { success: false, message: 'Target user not found.' };
     }
 
-    if (note.sharedWith.includes(targetUserId)) {
+    if (note.sharedWith.includes(SharingUserId)) {
       return { success: false, message: 'Note already shared with the target user.' };
     }
 
-    note.sharedWith.push(targetUserId); // Use push to add targetUserId to sharedWith array
+    note.sharedWith.push(SharingUserId); 
     await note.save();
 
     return { success: true, message: 'Note shared successfully.' };
@@ -96,7 +96,7 @@ const shareNote = async (noteId, targetUserId, userId) => {
 
 const searchNotes = async (query, userId) => {
   try {
-    const notes = await Note.find({ $text: { $search: query }, user: userId }).populate('sharedWith', 'username');
+    const notes = await Note.find({ $text: { $search: query }, user: userId })
     return { success: true, notes };
   } catch (error) {
     return { success: false, message: error.message };
