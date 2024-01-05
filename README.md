@@ -71,6 +71,6 @@ JWT_SECRET=yoursecretkey
    - Run the command: `yarn start`
    - Refer to the [API Endpoints](#api-endpoints) section for a list of available endpoints and their descriptions.
 
-## Postman API EndPoints
+### Postman API EndPoints
    - Acces Postman API Endpoints Json file in PostmanApi folder
    - Open Postman and Import NotesApi.json from the PostmanApi directory
