@@ -38,7 +38,7 @@ const createNote = async (req, res) => {
   try {
     const result = await noteService.createNote(title, content, userId);
     if (result.success) {
-      res.status(201).json({ success: true, message: result.message });
+      res.status(201).json({ success: true, message: result.message, Id: result.noteId });
     } else {
       res.status(400).json({ success: false, message: result.message });
     }

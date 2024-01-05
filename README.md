@@ -11,7 +11,7 @@ The **Notes API** is a RESTful API built with Node.js and MongoDB. It allows use
   - [Installation](#installation)
   - [Environment Variables](#environment-variables)
   - [Usage](#usage)
--[Postman API Endpoints](#postman-api-endpoints)
+  - [Postman API Endpoints](#postman-api-endpoints)
 
 
 ## Features

@@ -26,7 +26,7 @@ const createNote = async (title, content, userId) => {
   try {
     const newNote = new Note({ title, content, user: userId });
     await newNote.save();
-    return { success: true, message: 'Note created successfully.' };
+    return { success: true, message: 'Note created successfully.', noteId: newNote._id };
   } catch (error) {
     return { success: false, message: error.message };
   }
