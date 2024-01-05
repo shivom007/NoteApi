@@ -24,8 +24,10 @@ The **Notes API** is a RESTful API built with Node.js and MongoDB. It allows use
 
 ## Technical Requirements
 
-- Node.js (version  18.X.X)
-- MongoDB (version 8.X.X)
+- **Node.js (version  18.X.X)** : Chosen for its powerful features and asynchronous capabilities.
+- **Express.js**: Chosen for its simplicity, flexibility, and ease of building RESTful APIs and provides a robust set of features for web and mobile applications.
+- **MongoDB (version 8.X.X)** : Chosen for its flexibility with JSON-like documents, scalability, and ease of integration with Node.js. MongoDB is a NoSQL database that is well-suited for applications where data structure is expected to evolve over time.
+- **Express Rate Limit**: Implemented for rate limiting and request throttling. This helps protect the API from abuse and ensures fair usage.
 - Any additional requirements (e.g., npm packages, libraries)
 
 ## API Endpoints
