@@ -10,10 +10,9 @@ The **Notes API** is a RESTful API built with Node.js and MongoDB. It allows use
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+  - [Usage](#usage)
+
+
 
 ## Features
 
@@ -53,7 +52,6 @@ The **Notes API** is a RESTful API built with Node.js and MongoDB. It allows use
 1. Clone the repository: `git clone https://github.com/yourusername/notes-api.git`
 2. Change into the project directory: `cd notes-api`
 3. Install dependencies: `yarn`
-4. Run server: `yarn start`
 
 ### Environment Variables
 
@@ -65,5 +63,14 @@ MONGODB_URI= Your MongoDB URI
 
 # JWT secret key for authentication
 JWT_SECRET=yoursecretkey
+```
 
-# Postman Api Endpoints collection
+## Usage
+
+### Start the Server
+   - Run the command: `yarn start`
+   - Refer to the [API Endpoints](#api-endpoints) section for a list of available endpoints and their descriptions.
+
+## Postman API EndPoints
+   - Acces Postman API Endpoints Json file in PostmanApi folder
+   - Open Postman and Import NotesApi.json from the PostmanApi directory
