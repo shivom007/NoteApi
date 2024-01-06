@@ -55,7 +55,7 @@ The **Notes API** is a RESTful API built with Node.js and MongoDB. It allows use
 
 1. Clone the repository: `git clone https://github.com/shivom007/NoteApi.git`
 2. Change into the project directory: `cd noteapi`
-3. Install dependencies: `yarn install`
+3. Install dependencies: `yarn`
 
 ### Environment Variables
 
