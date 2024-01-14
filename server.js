@@ -33,6 +33,10 @@ app.use("/api", limiter, noteRoutes); //Limiter has 5 request allowed per min
 //Authenticated Route for searchQuery
 app.use("/api", searchLimiter, searchRoutes); //searchLimit has 10 request allowed per min
 
+app.get('/healthcheck', (req, res) => {
+  res.status(200).send('OK');
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
